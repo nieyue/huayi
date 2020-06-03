@@ -10,7 +10,9 @@
       <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
   <link rel="stylesheet" href="resources/css/bootstrap.min.css" >
   <link rel="stylesheet" href="resources/css/swiper.min.css">
+  <link rel="stylesheet" href="resources/css/animate.min.css">
   <link rel="stylesheet" href="resources/css/base.css">
+
   <title>huayi</title>
   <style>
 #index2-2{
@@ -55,7 +57,7 @@
         </div>
           
         <div style="margin-top:4rem;">
-          <div style="text-align:center;font-size:0.5rem;">EXPERTS EN ÉCRANS INTERACTIFS</div>
+          <div style="text-align:center;font-size:0.5rem;" class="slideInDown animated">EXPERTS EN ÉCRANS INTERACTIFS</div>
         </div>  
         
         <div id="pageJump1" style="position:fixed;bottom:0;left:50%;margin-left:-0.5rem;">
@@ -69,9 +71,9 @@
           <div class="swiper-container" id="swiper-container2">
             <div class="swiper-wrapper">
               <div class="swiper-slide" id="index2"> 
-                <div class="row" style="height:100%;">
-                    <div class="col-lg-6 text-center bgcolor2"  id="index2-1" style="height:90%;">
-                      <div style="height:100%;">
+                <div class="row" style="height:100%;" >
+                    <div class="col-lg-6  text-center bgcolor2"  id="index2-1" style="height:90%;">
+                      <div style="height:100%;" >
                          <img style="width:80%;padding:10%;" src="resources/img/a1.png">
                       </div>
                       
@@ -288,15 +290,30 @@
     if(!business.isPC()){
        $("#pageJump2").hide()
     }
+    $("#index2-1").hide()
+        $("#index2-2").hide()
     window.onload = function() {
     var mySwiper1 = new Swiper('#swiper-container1', {
     direction: 'vertical',
     mousewheel: true,
-    
+    fadeEffect: {
+    crossFade: true,
+  },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
+    on: {
+    slideChangeTransitionStart: function(){
+      //alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+      if(this.activeIndex==1){    
+        $("#index2-1").show()
+        $("#index2-2").show()
+        $("#index2-1").addClass("slideInLeft animated")
+        $("#index2-2").addClass("slideInRight animated")
+      }
+    },
+  },
     });
     $("#pageJump1").on("click",function(){
       console.log(mySwiper1.activeIndex)
@@ -328,7 +345,6 @@
     //resistanceRatio: 0,
     slidesPerView: 'auto',
     freeMode: true,
-
     mousewheel: {
         releaseOnEdges: true,
       },
