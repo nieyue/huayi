@@ -12,8 +12,6 @@ var business={
 		   return true;
 		}
 	}
-
-
 }
 
 $("#nav-close").click(function(){
@@ -23,4 +21,13 @@ $("#nav-close").click(function(){
 $("#nav-open").click(function(){
 	$("#nav-wrap").css("display","block")
 	$("#nav-wrap-bg").css("display","block")
+})
+//跳转
+$(".footicon3").click(function(){
+		location.href="https://www.linkedin.com/company/hua-yi-technologie-sas/"
+
+})
+$(".footicon4").click(function(){
+		location.href="https://twitter.com/hua_tech"
+
 })

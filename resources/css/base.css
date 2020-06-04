@@ -112,3 +112,10 @@
 #nav-menu div.active{
   border-bottom:2px solid #75ec94;
 }
+
+/**
+**foot
+*/
+.footicon1,.footicon2,.footicon3,.footicon4{
+  cursor:pointer;
+}

@@ -74,7 +74,7 @@
                 <div class="row" style="height:100%;" >
                     <div class="col-lg-6  text-center bgcolor2"  id="index2-1" style="height:90%;">
                       <div style="height:100%;" >
-                         <img style="width:80%;padding:10%;" src="resources/img/a1.png">
+                         <img style="width:100%;" src="resources/img/a1.png">
                       </div>
                       
                     </div>    
@@ -150,7 +150,7 @@
                       </div>
                     </div>
                     <div  class="row" >
-                        <div  class="col-lg-6 ">
+                        <div  class="col-lg-6 bgcolor">
                         <div style="display:inline-block;width:100%;" class="bgcolor">
                            <img style="width:100%;" src="resources/img/a4.png">
                   
@@ -182,7 +182,7 @@
                             DECOUVRIR
                         </div>
                       </div>
-                      <div  class="col-lg-6 ">
+                      <div  class="col-lg-6 bgcolor">
                         <div style="display:inline-block;width:100%;" class="bgcolor">
                            <img style="width:100%;" src="resources/img/a7.png">
                           
@@ -196,7 +196,7 @@
                     
                     <div  class="row bgcolor-foot text-center" >
                       <div  class="col-lg-5 " style="color:#000">
-                        <div style="padding:13% 5%;display:inline-block;text-align:left;font-size:0.2rem;">
+                        <div style="padding:0.5rem 0;display:inline-block;text-align:left;font-size:0.3rem;">
                           <div>CONATCTEZ NOUS</div>
                            <div>contact@huayitech.fr</div>
                            <div>téléphone : xxxxxxx</div>
@@ -206,34 +206,34 @@
                            
                       </div>
                       <div  class="col-lg-2 ">
-                        <div style="padding:30% 0;display:inline-block;">
+                        <div style="padding:0.5rem 0;display:inline-block;">
                           <div style="display:inline-block;width:100%;">
                            <img style="width:80%;" src="resources/img/logo2.png">
                           
                           </div>
                           <br/>
-                          <div style="font-size:0.1rem;font-weight:bold;display:inline-block;color:#6db4e6">
+                          <div style="font-size:0.2rem;font-weight:bold;display:inline-block;color:#6db4e6">
                               EXPERTS EN ÉCRANS
                           </div>
                         </div>
                         
                       </div>
                       <div  class="col-lg-5 ">
-                        <div style="padding:10% 5%;display:inline-block;text-align:right;">
+                        <div style="padding:0.5rem 0;display:inline-block;text-align:right;">
                             <div style="display:inline-block;width:100%;" >
-                               <img  src="resources/img/icon1.png">
-                               <img src="resources/img/icon2.png">
-                               <img  src="resources/img/icon3.png">
-                               <img  src="resources/img/icon4.png">
+                               <img class="footicon1"  src="resources/img/icon1.png">
+                               <img class="footicon2" src="resources/img/icon2.png">
+                               <img class="footicon3" src="resources/img/icon3.png">
+                               <img class="footicon4" src="resources/img/icon4.png">
                             </div>
                             <br/>
                             <br/>
-                            <div style="font-size:0.2rem;font-weight:bold;display:inline-block;">
+                            <div style="font-size:0.3rem;font-weight:bold;display:inline-block;">
                                 A PROPOS HUAYI
                             </div>
                             <br/>
                             <br/>
-                            <div style="font-size:0.2rem;font-weight:bold;display:inline-block;">
+                            <div style="font-size:0.3rem;font-weight:bold;display:inline-block;">
                                 FQA
                             </div>
                         </div>
@@ -287,11 +287,12 @@
     <script src="resources/js/swiper.min.js"> </script>
     <script src="resources/js/base.js"></script>
     <script> 
-    if(!business.isPC()){
-       $("#pageJump2").hide()
-    }
+    $("#pageJump2").hide()
     $("#index2-1").hide()
-        $("#index2-2").hide()
+    $("#index2-2").hide()
+    var ispc=business.isPC();
+    
+    
     window.onload = function() {
     var mySwiper1 = new Swiper('#swiper-container1', {
     direction: 'vertical',
@@ -311,6 +312,9 @@
         $("#index2-2").show()
         $("#index2-1").addClass("slideInLeft animated")
         $("#index2-2").addClass("slideInRight animated")
+        if(ispc){
+           $("#pageJump2").show()
+        }
       }
     },
   },
