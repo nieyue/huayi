@@ -12,6 +12,44 @@ var business={
 		   return true;
 		}
 	}
+	,
+	scroll:function(element,callback){
+		$(element).each(function(){
+			var _this=this;
+			;(function(_this){
+				$(window).scroll(function() {
+				var hT = $(_this).offset().top,
+			       hH = $(_this).outerHeight(),
+			       wH = $(document).height(),
+			       wS = $(document).scrollTop();
+			     if (wS > (hT+hH-wH)+50){
+			     //if (hT>wS&&hT<(wS+wH)){
+			     	console.log("hT="+hT+"hH="+hH+"wH="+wH+"wS="+wS)
+			     	if(typeof callback=="function")
+			     		
+			        callback($(_this));
+			     }
+			})
+			}
+
+				)(_this)
+			
+		 });
+	/*setInterval(function(){
+		var _this=this;
+		console.log(_this)
+		$(element).each(function(){
+			var hT = $(element).offset().top,
+		       hH = $(element).outerHeight(),
+		       wH = $(document).height(),
+		       wS = $(document).scrollTop();
+		     if (wS > (hT+hH-wH)){
+		     	if(typeof callback=="function")
+		        callback($(this));
+		     }
+		})
+	},1000)*/
+	}
 }
 
 $("#nav-close").click(function(){

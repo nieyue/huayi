@@ -1,7 +1,27 @@
+.container,.container-fluid{
+  padding:0px;
+  margin: 0;
+}
+.row{padding:0px;
+  margin: 0;}
+
+col-*-* {padding:0px;
+  margin: 0;}
+
+
+.fontColor1{
+  color:#73e7bd;
+}
+.fontColor2{
+  color:#282569;
+}
+.boderBottom1{
+  border-bottom:3px solid #73e7bd;
+}
 
  html, body {
       position: relative;
-      height: 100%;
+     /*  height: 100%; */
 
     }
     body {
